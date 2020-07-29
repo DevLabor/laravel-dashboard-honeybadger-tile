@@ -2,9 +2,9 @@
 
 namespace DevLabor\HoneybadgerTile;
 
+use DevLabor\HoneybadgerTile\Commands\FetchHoneybadgerProjectsCommand;
 use Illuminate\Support\ServiceProvider;
 use Livewire\Livewire;
-use DevLabor\HoneybadgerTile\Commands\FetchHoneybadgerProjectsCommand;
 
 class HoneybadgerTileServiceProvider extends ServiceProvider
 {

@@ -2,9 +2,9 @@
 
 namespace DevLabor\HoneybadgerTile\Commands;
 
+use DevLabor\HoneybadgerTile\HoneybadgerStore;
 use DevLabor\HoneybadgerTile\Services\Honeybadger;
 use Illuminate\Console\Command;
-use DevLabor\HoneybadgerTile\HoneybadgerStore;
 
 class FetchHoneybadgerProjectsCommand extends Command
 {
