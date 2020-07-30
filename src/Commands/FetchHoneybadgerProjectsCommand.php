@@ -23,12 +23,22 @@ class FetchHoneybadgerProjectsCommand extends Command
      */
     public function handle()
     {
+        $authToken = config('dashboard.tiles.honeybadger.auth_token');
+
+        if (! $authToken) {
+            $this->error('Honeybadger Auth Token is missing. Please configurate!');
+
+            return 1;
+        }
+
         $projects = Honeybadger::getProjects(
-            config('dashboard.tiles.honeybadger.auth_token'),
+            $authToken,
         );
 
-        HoneybadgerStore::make()->addUnresolvedException($projects['results'] ?? []);
+        HoneybadgerStore::make()->setProjects($projects['results'] ?? []);
 
         $this->info('All done!');
+
+        return 0;
     }
 }

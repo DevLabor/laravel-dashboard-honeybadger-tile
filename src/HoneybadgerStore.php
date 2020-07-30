@@ -11,21 +11,35 @@ class HoneybadgerStore
      */
     private Tile $tile;
 
+    /**
+     * @return static
+     */
     public static function make()
     {
         return new static();
     }
 
+    /**
+     * HoneybadgerStore constructor.
+     */
     public function __construct()
     {
         $this->tile = Tile::firstOrCreateForName('honeybadger');
     }
 
+    /**
+     * @return array
+     */
     public function projects(): array
     {
         return $this->tile->getData('projects') ?? [];
     }
 
+    /**
+     * @param array $projects
+     *
+     * @return $this
+     */
     public function setProjects(array $projects): self
     {
         $this->tile->putData('projects', $projects);
