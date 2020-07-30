@@ -24,7 +24,7 @@ class HoneybadgerStoreTest extends TestCase
                 'name' => 'Sample Project Two',
                 'unresolved_fault_count' => 3,
                 'fault_count' => 493,
-            ]
+            ],
     ];
 
     /** @test */
