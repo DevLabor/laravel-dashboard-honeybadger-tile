@@ -32,6 +32,7 @@ class HoneybadgerTileComponent extends Component
         return view('dashboard-honeybadger-tile::tile', [
             'unresolvedFaults' => HoneybadgerStore::make()->unresolvedFaults(),
             'projects' => HoneybadgerStore::make()->projects(),
+            'description' => config('dashboard.tiles.honeybadger.description'),
             'refreshIntervalInSeconds' => config('dashboard.tiles.honeybadger.refresh_interval_in_seconds') ?? 300,
         ]);
     }

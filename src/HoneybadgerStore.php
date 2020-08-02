@@ -48,10 +48,10 @@ class HoneybadgerStore
     }
 
     /**
-     * @return int
+     * @return int|float
      */
-    public function unresolvedFaults(): int
+    public function unresolvedFaults()
     {
-        return array_sum($this->tile->getData('projects.*.unresolved_fault_count') ?? []);
+        return array_sum(data_get($this->tile->getData('projects'), '*.unresolved_fault_count') ?? []);
     }
 }

@@ -5,14 +5,13 @@ namespace DevLabor\HoneybadgerTile\Tests;
 use DevLabor\HoneybadgerTile\HoneybadgerTileServiceProvider;
 use Illuminate\Support\Facades\Schema;
 use Livewire\LivewireServiceProvider;
-use NunoMaduro\LaravelMojito\MojitoServiceProvider;
 use Orchestra\Testbench\TestCase as BaseTestCase;
 use Spatie\Dashboard\DashboardServiceProvider;
 
 class TestCase extends BaseTestCase
 {
     /**
-     * Setup case.
+     * Set up the test.
      */
     public function setUp(): void
     {
@@ -52,7 +51,6 @@ class TestCase extends BaseTestCase
         return [
             DashboardServiceProvider::class,
             LivewireServiceProvider::class,
-            MojitoServiceProvider::class,
             HoneybadgerTileServiceProvider::class,
         ];
     }

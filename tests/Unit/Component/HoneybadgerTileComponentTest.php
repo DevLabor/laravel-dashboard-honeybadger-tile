@@ -6,7 +6,6 @@ use DevLabor\HoneybadgerTile\HoneybadgerTileComponent;
 use DevLabor\HoneybadgerTile\Tests\TestCase;
 use Livewire\Livewire;
 use Livewire\Testing\TestableLivewire;
-use NunoMaduro\LaravelMojito\ViewAssertion;
 
 class HoneybadgerTileComponentTest extends TestCase
 {
@@ -28,16 +27,11 @@ class HoneybadgerTileComponentTest extends TestCase
             ->set('position', 'a1:a2')
             ->call('render');
 
-        $html = $result->payload['dom'];
-        $wireId = $result->payload['id'];
+        //$wireId = $result->payload['id'];
 
         $result->assertViewHas('projects', [])
             ->assertViewHas('unresolvedFaults')
-            ->assertViewHas('refreshIntervalInSeconds', 300)
-            ->assertViewHas('wireId', $wireId)
-            ->assertViewHas('height', '100%');
-
-        (new ViewAssertion($html))
-            ->contains('<div id="chart_'.$wireId.'" style="height: 100%"></div>');
+            ->assertViewHas('refreshIntervalInSeconds', 300);
+        //->assertViewHas('wireId', $wireId);
     }
 }

@@ -24,7 +24,7 @@ class HoneybadgerStoreTest extends TestCase
                 'name' => 'Sample Project Two',
                 'unresolved_fault_count' => 3,
                 'fault_count' => 493,
-            ]
+            ],
     ];
 
     /** @test */
@@ -42,6 +42,7 @@ class HoneybadgerStoreTest extends TestCase
         HoneybadgerStore::make()->setProjects($this->projects);
         $unresolvedFaults = HoneybadgerStore::make()->unresolvedFaults();
 
-        $this->assertEquals($unresolvedFaults, 26);
+        $this->assertIsNumeric($unresolvedFaults);
+        $this->assertEquals(26, $unresolvedFaults);
     }
 }

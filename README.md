@@ -1,10 +1,10 @@
-# A tile to display unresolved Honeybadger exceptions
+# A tile to display unresolved faults count from Honeybadger.io
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/devlabor/laravel-dashboard-honeybadger-tile.svg?style=flat-square)](https://packagist.org/packages/devlabor/laravel-dashboard-honeybadger-tile)
 [![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/devlabor/laravel-dashboard-honeybadger-tile/run-tests?label=tests)](https://github.com/devlabor/laravel-dashboard-honeybadger-tile/actions?query=workflow%3Arun-tests+branch%3Amaster)
 [![Total Downloads](https://img.shields.io/packagist/dt/devlabor/laravel-dashboard-honeybadger-tile.svg?style=flat-square)](https://packagist.org/packages/devlabor/laravel-dashboard-honeybadger-tile)
 
-This tile can used on the [Laravel Dashboard](https://docs.spatie.be/laravel-dashboard) to display unresolved Honeybadger faults.
+This tile can used on the [Laravel Dashboard](https://docs.spatie.be/laravel-dashboard) to display unresolved Honeybadger faults count.
 
 ## Installation
 
@@ -25,6 +25,7 @@ return [
     // ...
     'tiles' => [
         'honeybadger' => [
+            //'description' => 'Unresolved faults',
             'auth_token' => env('HONEYBADGER_AUTH_TOKEN'),
             'refresh_interval_in_seconds' => 300
         ],
@@ -44,13 +45,20 @@ protected function schedule(Schedule $schedule)
 }
 ```
 
+You are also able to execute the command manually.
+
+```bash
+php artisan dashboard:fetch-honeybadger-projects
+```
+
+
 ## Usage
 
 In your dashboard view you use the `livewire:honeybadger-tile` component.
 
 ```html
 <x-dashboard>
-    <livewire:honeybadger-tile position="a1" />
+    <livewire:honeybadger-tile position="a1" title="Honeybadger" />
 </x-dashboard>
 ```
 

@@ -31,11 +31,17 @@ class FetchHoneybadgerProjectsCommand extends Command
             return 1;
         }
 
-        $projects = Honeybadger::getProjects(
+        $response = Honeybadger::getProjects(
             $authToken,
         );
 
-        HoneybadgerStore::make()->setProjects($projects['results'] ?? []);
+        if (isset($response['errors'])) {
+            $this->error('Honeybadger API error: ' . $response['errors']);
+
+            return 1;
+        }
+
+        HoneybadgerStore::make()->setProjects($response['results'] ?? []);
 
         $this->info('All done!');
 
