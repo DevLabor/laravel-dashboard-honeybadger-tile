@@ -14,9 +14,13 @@ You can install the tile via composer:
 composer require devlabor/laravel-dashboard-honeybadger-tile
 ```
 
-In the `dashboard` config file, you must add this configuration in the `tiles` key.
+Sign up to https://honeybadger.io and create a new project. To obtain `HONEYBADGER_AUTH_TOKEN` you have to create a new api token under your user authentication settings. After that add the token to your `.env` file.
 
-Sign up at https://honeybadger.io/ and create a new project. To obtain `HONEY_BADGER_AUTH_TOKEN` you have to create a new api token under your user authentication settings.
+```bash
+HONEYBADGER_AUTH_TOKEN=YourGeneratedToken
+```
+
+In the `config/dashboard.php` config file, you must add this configuration in the `tiles` key.
 
 ```php
 // in config/dashboard.php

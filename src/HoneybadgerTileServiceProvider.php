@@ -23,7 +23,7 @@ class HoneybadgerTileServiceProvider extends ServiceProvider
 
         $this->publishes([
             __DIR__ . '/../resources/views' => resource_path('views/vendor/dashboard-honeybadger-tile'),
-        ], 'dashboard-honeybadger-views');
+        ], 'dashboard-honeybadger-tile-views');
 
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'dashboard-honeybadger-tile');
     }
