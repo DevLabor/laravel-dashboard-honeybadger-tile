@@ -6,6 +6,8 @@
 
 This tile can used on the [Laravel Dashboard](https://docs.spatie.be/laravel-dashboard) to display unresolved Honeybadger faults count.
 
+![Screenshot](https://devlabor.com/github/screenshot-laravel-dashboard-honeybadger-tile.jpg)
+
 ## Installation
 
 You can install the tile via composer:
