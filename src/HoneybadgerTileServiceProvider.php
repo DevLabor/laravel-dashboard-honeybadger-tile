@@ -13,7 +13,8 @@ class HoneybadgerTileServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Livewire::component('honeybadger-tile', HoneybadgerTileComponent::class);
+        Livewire::component('honeybadger-unresolved-faults-tile', HoneybadgerUnresolvedFaultsTileComponent::class);
+        Livewire::component('honeybadger-offline-sites-tile', HoneybadgerOfflineSitesTileComponent::class);
 
         if ($this->app->runningInConsole()) {
             $this->commands([
