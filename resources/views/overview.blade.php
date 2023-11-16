@@ -6,7 +6,7 @@
         <div class="grid grid-rows-auto-1 h-full">
             @isset($title)
                 <div class="tile-heading">
-                    <h1 class="uppercase text-center font-bold">
+                    <h1 class="uppercase text-center font-bold mb-2">
                         {{ $title }}
                     </h1>
                 </div>
@@ -16,7 +16,7 @@
                     [$unresolvedFaults, $description_faults], 
                     [$offlineSites, $description_offline]
                 ] as $data)
-                <div class="grid grid-rows-auto-1 w-1/2 h-full rounded @if($data[0]) bg-error @endif">
+                <div class="grid grid-rows-auto-1 w-1/2 h-full p-3 rounded @if($data[0]) bg-error @endif">
                     <h2 class="uppercase text-xs @if($data[0]) text-white @endif text-opacity-50 text-center">
                         @isset($data[1]) {{ $data[1] }} @endisset
                     </h2>

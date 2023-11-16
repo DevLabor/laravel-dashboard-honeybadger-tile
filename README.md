@@ -66,6 +66,8 @@ In your dashboard view you use the `livewire:honeybadger-tile` component.
 <x-dashboard>
     <livewire:honeybadger-unresolved-faults-tile position="a1" title="Honeybadger" description="Unresolved Faults" />
     <livewire:honeybadger-offline-sites-tile position="b1" title="Honeybadger" description="Offline Sites" />
+    <!-- or -->
+    <livewire:honeybadger-overview-tile position="a2:b2" title="Honeybadger" description_faults="Unresolved Faults" description_offline="Offline Sites" />
 </x-dashboard>
 ```
 
