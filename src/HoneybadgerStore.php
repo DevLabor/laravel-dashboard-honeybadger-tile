@@ -70,7 +70,11 @@ class HoneybadgerStore
      */
     public function sites($state = null)
     {
-        $sites = collect(data_get($this->tile->getData('projects'), '*.sites') ?? []);
+        $sites = [];
+        foreach (data_get($this->tile->getData('projects'), '*.sites') ?? [] as $value) {
+            $sites = array_merge($sites, $value);
+        }
+        $sites = collect($sites);
 
         if ($state) {
             $sites = $sites->where('state', $state);

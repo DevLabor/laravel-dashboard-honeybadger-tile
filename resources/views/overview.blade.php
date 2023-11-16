@@ -16,7 +16,7 @@
                     [$unresolvedFaults, $description_faults], 
                     [$offlineSites, $description_offline]
                 ] as $data)
-                <div class="grid grid-rows-auto-1 w-1/2 h-full p-3 rounded @if($data[0]) bg-error @endif">
+                <div class="grid grid-rows-auto-1 w-1/2 h-full p-3 rounded @if($data[0]) bg-error @endif @if(!$loop->last) mr-1 @endif">
                     <h2 class="uppercase text-xs @if($data[0]) text-white @endif text-opacity-50 text-center">
                         @isset($data[1]) {{ $data[1] }} @endisset
                     </h2>
