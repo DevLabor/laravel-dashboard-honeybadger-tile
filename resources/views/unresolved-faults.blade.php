@@ -2,7 +2,7 @@
     :position="$position"
     :fade="false"
     :refresh-interval="$refreshIntervalInSeconds">
-    <div class="absolute inset-0 @if($unresolvedFaults) bg-error @endif p-4">
+    <div class="absolute inset-0 @if($unresolvedFaults) bg-warning @endif p-4">
         <div class="grid grid-rows-auto-1 h-full">
             @isset($title)
                 <div class="tile-heading">
